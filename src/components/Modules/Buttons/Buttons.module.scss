@@ -1,0 +1,107 @@
+@keyframes rotate360 {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.wrapper {
+    height: 40px;
+    font-family: var(--font-family);
+    min-width: 110px;
+    padding: 10px 16px;
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    border-radius: 2px;
+
+    font-size: 1.6rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-background);
+    cursor: pointer;
+    user-select: none;
+
+    .loading {
+        padding: 0;
+        width: 16px;
+        height: 16px;
+        animation: rotate360 1s linear infinite;
+    }
+    svg {
+        padding-right: 4px;
+    }
+    & + .wrapper {
+        margin-left: 16px;
+    }
+    &.disabled {
+        background-color: var(--small-text);
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+// Size
+.wrapper.sizeL {
+    font-weight: 600;
+    font-size: 1.8rem;
+    border-radius: 4px;
+    min-width: 168px;
+    min-height: 48px;
+    width: 100%;
+    padding: 14px 16px;
+}
+.wrapper.sizeM {
+    min-width: 88px;
+    height: 36px;
+    padding: 4px 16px;
+}
+// Styles
+.wrapper.primary {
+    background-color: var(--primary);
+    color: #fff;
+    &:hover {
+        background: #ba1c3c;
+    }
+    &.subscribe {
+        border-color: #fe2c55;
+        background-color: var(--panel);
+        color: #fe2c55;
+    }
+}
+.wrapper.blackPrimary {
+    background-color: var(--primary);
+    color: #fff;
+    &:hover {
+        background: #ba1c3c;
+    }
+    &.subscribe {
+        border-color: var(--line-color);
+        background-color: var(--panel);
+        color: var(--text);
+        &:hover {
+            background-color: var(--strong-background);
+        }
+    }
+}
+.wrapper.outline {
+    color: var(--primary);
+    background-color: var(--panel);
+    border-color: currentColor;
+    &:hover {
+        background: var(--strong-background);
+    }
+    &.subscribe {
+        background-color: var(--light-background);
+        color: var(--text);
+        border-color: transparent;
+        &:hover {
+            border-color: var(--text);
+        }
+    }
+}
+.wrapper.blackOutline {
+    background-color: var(--light-panel);
+    color: var(--strong-text);
+    &:hover {
+        opacity: 0.8;
+    }
+}

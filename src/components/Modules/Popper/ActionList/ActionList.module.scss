@@ -1,0 +1,44 @@
+.list {
+    width: 220px;
+    background-color: var(--panel);
+    border-radius: 8px;
+    padding: 6px 0;
+    box-shadow: 2px 2px 8px rgb(0 0 0 / 20%);
+    background-color: var(--panel);
+    max-height: min((100vh - 96px) - 60px, 734px);
+    overflow-y: auto;
+    list-style: none;
+}
+.item {
+    position: relative;
+    padding: 11px 16px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    span {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: var(--text);
+    }
+    svg {
+        color: var(--text);
+        fill: var(--text);
+        margin-right: 12px;
+        width: 16px;
+        height: 16px;
+    }
+    &:hover {
+        background-color: var(--light-background);
+        cursor: pointer;
+    }
+    &.last::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,-50%) scaleY(80%);
+        height: 1px;
+        width: 90%;
+        background-color: var(--small-background);
+    }
+}

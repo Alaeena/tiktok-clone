@@ -1,0 +1,51 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.item {
+    background: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .button {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        transition: all 100ms ease-in-out 0s;
+        background-color: var(--light-background);
+        margin-top: 8px;
+        margin-bottom: 6px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--small-background);
+        }
+        svg {
+            color: var(--text);
+        }
+    }
+    > span {
+        transition: color 0.3s ease-out;
+        color: var(--light-text);
+        font-weight: 700;
+        font-size: 1.2rem;
+        line-height: 16px;
+        letter-spacing: 0.161px;
+        text-align: center;
+    }
+}
+.item.favorite {
+    > span {
+        color: #face15;
+    }
+}
+.item.like {
+    > span {
+        color: #e2264d;
+    }
+}

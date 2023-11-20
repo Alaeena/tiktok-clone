@@ -1,0 +1,103 @@
+.button {
+    position: relative;
+    border-radius: 50%;
+    transition: all 100ms ease-in-out 0s;
+    background-color: var(--light-background);
+    &:hover {
+        cursor: pointer;
+        background-color: var(--small-background);
+    }
+    svg {
+        color: var(--text);
+    }
+}
+.button.favorite {
+    > span {
+        color: #face15;
+    }
+}
+.button.like {
+    > span {
+        color: #e2264d;
+    }
+}
+.heart-img {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    top: -40%;
+    right: -40%;
+    width: 180%;
+    height: 180%;
+    background-size: calc(29 * 100%) 100%;
+    background-position: left;
+
+    &.like {
+        opacity: 1;
+        animation: heartAnimation 1s steps(28) forwards;
+    }
+    &.like + svg {
+        opacity: 0;
+    }
+}
+@keyframes heartAnimation {
+    to {
+        background-position: right;
+    }
+}
+// FAVORITE ICON ANIMATION
+.favorite-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > div {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .circle {
+        fill: #face15;
+        display: none;
+        height: 10px;
+        width: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform-origin: center;
+        position: absolute;
+    }
+
+    &.favorite {
+        .fa {
+            animation: onFavorite 0.5s forwards;
+        }
+        .circle {
+            display: unset;
+            animation: CircleFavortie 0.4s forwards;
+        }
+    }
+}
+@keyframes CircleFavortie {
+    to {
+        height: 90px;
+        width: 90px;
+        opacity: 0;
+    }
+}
+@keyframes onFavorite {
+    0% {
+        transform: scale(0%);
+    }
+    60% {
+        transform: scale(200%);
+    }
+    80% {
+        transform: scale(50%);
+    }
+    to {
+        transform: scale(100%);
+        color: #face15;
+    }
+}

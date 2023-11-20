@@ -1,0 +1,105 @@
+.container {
+    flex: 1 0 600px;
+    max-width: 100%;
+    background: rgb(0, 0, 0);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 0px 80px;
+}
+// ========= // Video Action // ========= //
+
+.down,
+.up,
+.browse,
+.exit {
+    position: absolute;
+    transition: opacity 0.3s ease 0s;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(84, 84, 84, 0.5);
+    width: 40px;
+    height: 40px;
+    top: calc(50% + 8px);
+    right: 20px;
+    cursor: pointer;
+    svg {
+        color: #fff;
+        position: relative;
+        width: 28px;
+        height: 28px;
+    }
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(37, 37, 37, 0.6);
+        opacity: 0.7;
+    }
+}
+.play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    width: 70px;
+    height: 70px;
+}
+.up {
+    transform: rotate(-180deg);
+    top: calc(50% - 48px);
+}
+.browse {
+    background-color: rgba(255, 255, 255, 0.12);
+    top: 20px;
+}
+.exit {
+    top: 20px;
+    left: 20px;
+    > svg {
+        width: 28px;
+        height: 28px;
+        color: #fff;
+    }
+}
+// ========= // Video Wrapper // ========= //
+
+.blur-background {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    filter: blur(2px);
+    left: 50%;
+    top: 50%;
+    transform: scale(11);
+    opacity: 0.3;
+}
+.video-wrapper {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    video {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+.music {
+    > div:nth-child(2) {
+        transition: 0.2s background;
+        border-radius: 50%;
+        background-color: rgba(84, 84, 84, 0.5);
+        &:hover {
+            opacity: 0.7;
+            background-color: rgba(37, 37, 37, 0.6);
+        }
+    }
+}
+.progress {
+    bottom: 28px;
+    width: calc(100% - 160px);
+}

@@ -1,0 +1,55 @@
+.action {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.menu {
+    margin-left: 12px;
+    background-color: transparent;
+    color: var(--strong-text);
+    padding: 12px 8px;
+    cursor: pointer;
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+.menu-icon {
+    margin-left: 16px;
+    cursor: pointer;
+    background-color: transparent;
+    position: relative;
+    svg {
+        color: var(--strong-text);
+        width: 22px;
+        height: 22px;
+    }
+    span {
+        position: absolute;
+        font-size: 1.2rem;
+        font-weight: 600;
+        background-color: var(--primary);
+        color: #fff;
+        padding: 2px 4px;
+        border-radius: 8px;
+        top: -55%;
+        right: -60%;
+        z-index: 100;
+    }
+}
+.menu-img {
+    margin-left: 16px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background-size: cover;
+    border-radius: 100px;
+}
+
+@media screen and (max-width: 1071px) {
+    .menu {
+        margin-left: 8px;
+        padding: 4px 4px;
+    }
+}

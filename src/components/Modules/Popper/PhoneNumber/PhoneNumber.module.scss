@@ -1,0 +1,59 @@
+$height: 285px;
+$input-height: 35px;
+.container {
+    background-color: var(--panel);
+    border: 0.5px solid var(--line-color);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 12px;
+    border-radius: 8px;
+}
+.list {
+    background-color: var(--panel);
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    max-height: $height;
+    list-style: none;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: var(--line-color);
+        border-radius: 10px;
+    }
+}
+.placeholder {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--line-color);
+
+    input {
+        flex: 1;
+        height: $input-height;
+    }
+    svg {
+        width: 1.4rem;
+        height: 1.4rem;
+        margin: 0px 15px;
+        color: var(--small-text);
+        display: flex;
+        align-items: center;
+    }
+}
+.item {
+    font-size: 1.4rem;
+    color: var(--text);
+    padding: 6px 12px;
+    width: 100%;
+    user-select: none;
+    span {
+        color: #20d5ec;
+    }
+}
+.item:hover {
+    background-color: var(--line-color);
+    cursor: pointer;
+}

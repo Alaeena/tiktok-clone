@@ -1,0 +1,32 @@
+.wrapper {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.06);
+    padding: 20px 0 26px 4px;
+    width: 240px;
+    height: calc(100% - var(--defaultLayout-header-height));
+    border-right: 1px solid var(--small-background);
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+    overflow-x: visible;
+    position: fixed;
+    left: 0;
+    top: var(--defaultLayout-header-height);
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: var(--small-background);
+        border-radius: 10px;
+    }
+}
+// @media screen and (max-width: 1071px) {
+//     .wrapper {
+//         width: 72px;
+//     }
+// }

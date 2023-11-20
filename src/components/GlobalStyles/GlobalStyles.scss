@@ -1,0 +1,176 @@
+@import 'normalize.css';
+// Setup variable, font-size beforehand like that of the cloning page
+:root {
+    --primary: #fe2c55;
+
+    --small-background: #ddd;
+    --light-background: #eee;
+    --background: #fefefe;
+    --strong-background: #fff;
+
+    --small-text: #666;
+    --light-text: #333;
+    --text: #181818;
+    --strong-text: #111;
+
+    // Special theme
+    --line-color: #e1e1e1;
+    --panel: #fefefe;
+    --small-panel: #fefefe;
+    --light-panel: #fefefe;
+
+    --back: #eee;
+    --hover: rgba(22, 24, 35, 0.03);
+    --border-color: #aaa;
+
+    // Default Layout
+    --font-family: 'TikTokFont', sans-serif;
+    --defaultLayout-header-height: 60px;
+}
+[data-theme='dark'] {
+    --small-background: #444;
+    --light-background: #2f2f2f;
+    --background: #121212;
+    --strong-background: #111;
+
+    --small-text: #aaa;
+    --light-text: #ddd;
+    --text: #cacaca;
+    --strong-text: #eaeaea;
+    // Special theme
+    --line-color: #767676;
+    --small-panel: #4f4f4f;
+    --light-panel: #3f3f3f;
+    --panel: #252525;
+
+    --back: #121212;
+    --hover: hsla(0, 0%, 100%, 0.04);
+    --border-color: #555;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.1s;
+    transition: color 0.1s;
+}
+html {
+    font-size: 62.5%;
+    *::-webkit-scrollbar {
+        width: 10px;
+    }
+    *::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    *::-webkit-scrollbar-thumb {
+        background: var(--small-background);
+        border-radius: 10px;
+    }
+}
+body {
+    background-color: var(--background);
+    font-family: var(--font-family);
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    overflow-y: overlay;
+}
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+a[href] {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+// Font embeded
+@font-face {
+    font-family: TikTokDisplayFont;
+    src: url('../../../src/assets/fonts/TikTokDisplayFont-Bold.woff2');
+    font-weight: 700;
+}
+@font-face {
+    font-family: TikTokFont;
+    src: url('../../../src/assets/fonts/TikTokFont-Bold.woff2');
+    font-weight: 700;
+}
+@font-face {
+    font-family: TikTokFont;
+    src: url('../../../src/assets/fonts/TikTokFont-Semibold.woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: TikTokFont;
+    src: url('../../../src/assets/fonts/TikTokFont-Regular.woff2');
+    font-weight: 400;
+}
+// Custom Tippy tooltip
+
+body .tippy-box {
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 22px;
+    background-color: var(#666);
+
+    .tippy-content {
+        padding: 9px;
+    }
+    .tippy-arrow {
+        color: var(#666);
+    }
+}
+.tiktok-loading {
+    padding: 10px 0;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        border-radius: 50%;
+        mix-blend-mode: difference;
+        animation: rotate 1s infinite cubic-bezier(0.77, 0, 0.175, 1);
+        z-index: 5;
+    }
+    &::before {
+        background-color: #ff3e9e;
+        animation-delay: 0.5s;
+    }
+    &::after {
+        background-color: #4de8f4;
+    }
+}
+@keyframes rotate {
+    0%,
+    100% {
+        left: 15px;
+    }
+    25% {
+        transform: scale(0.3);
+    }
+    50% {
+        left: -15px;
+    }
+    75% {
+        transform: scale(1);
+    }
+}
+.loading {
+    background-image: linear-gradient(to left, var(--strong-background), var(--small-background));
+    animation: loading 1s linear infinite alternate;
+    background-size: 300%;
+}
+@keyframes loading {
+    from {
+        background-position-x: 0%;
+    }
+    to {
+        background-position-x: 100%;
+    }
+}

@@ -1,0 +1,40 @@
+.content {
+    box-shadow: 0 1px 1px rgb(0 0 0 / 12%);
+    border-bottom: 1px solid var(--small-background);
+    background-color: var(--background);
+    height: var(--defaultLayout-header-height);
+    width: 100%;
+
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+// Header Logo
+.header-logo {
+    flex: 1;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        height: 100%;
+    }
+}
+.dark-logo {
+    display: none;
+    top: 4px;
+    position: relative;
+}
+[data-theme='dark'] {
+    .default-logo {
+        display: none;
+    }
+    .dark-logo {
+        display: inline;
+    }
+}
